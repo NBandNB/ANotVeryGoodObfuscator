@@ -2,18 +2,15 @@
 
 using namespace	Obfuscate;
 
-char* Obfuscator::Reverse(char* message) {
-	static std::vector<char> newMessage;
+std::string Obfuscator::Reverse(std::string message) {
+	static std::string newMessage;
 	static int n = 0;
 
-	for (int i = strlen(message) - 1; i >= 0; i--) {
+	for (int i = message.length() - 1; i >= 0; i--) {
 		newMessage.push_back((char)"\0");
 		newMessage[n] = message[i];
 		n += 1;
 	}
 
-	char* newNewMessage = newMessage.data();
-	for (int i = strlen(message); i < strlen(newNewMessage); ++i)
-		newNewMessage[i] = NULL;
-	return newNewMessage;
+	return newMessage;
 }

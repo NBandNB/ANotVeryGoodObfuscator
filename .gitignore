@@ -3,3 +3,6 @@
 in.txt
 out.txt
 /x64/
+/vcpkg_installed
+/Win32
+*.user

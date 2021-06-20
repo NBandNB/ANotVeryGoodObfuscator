@@ -1,18 +1,19 @@
 #pragma once
 
 #include <stdio.h>
-#include <string>
-#include <iostream>
-#include <vector>
+#include "Main.h"
 
 namespace Obfuscate {
 	class Obfuscator
 	{
 	public:
-		static char* Obfuscate(int times, char* message);
-		static char* ROT(int rotations, char* message);
-		static char* Reverse(char* message);
-		static char* Binary(char* message);
+		static std::string Obfuscate(int times, std::string message);
+		static std::string Deobfuscate(int times, std::string message);
+		static std::string RROT(int rotations, std::string message);
+		static std::string ROT(int rotations, std::string message);
+		static std::string Reverse(std::string message);
+		static std::string ReverseBinary(std::string message);
+		static std::string Binary(std::string message);
 	};
 
 }

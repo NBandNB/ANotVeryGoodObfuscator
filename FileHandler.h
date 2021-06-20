@@ -1,10 +1,7 @@
 #pragma once
 
-#include <iostream>
 #include <fstream>
-#include <algorithm>
-#include <iterator>
-#include <string>
+#include "Main.h"
 
 class Files
 {

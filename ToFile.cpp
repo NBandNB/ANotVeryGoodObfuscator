@@ -1,15 +1,14 @@
 #include "FileHandler.h"
 
-using namespace std;
 
 void Files::writeToFile(std::string file, std::string message) {
 	std::ofstream fileOut;
-	fileOut.open(file);
+	fileOut.open((char*)file.c_str());
 	fileOut << message;
 	fileOut.close();
 }
 
-string Files::readFromFile(std::string file) {
+std::string Files::readFromFile(std::string file) {
     std::ifstream in(file, std::ios::in | std::ios::binary);
     if (in)
     {

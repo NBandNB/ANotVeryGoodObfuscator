@@ -4,8 +4,8 @@
 
 using namespace Obfuscate;
 
-char* Obfuscator::Obfuscate(int times, char* message) {
-	char* encrypedMessage = message;
+std::string Obfuscator::Obfuscate(int times, std::string message) {
+	std::string encrypedMessage = message;
 
 
 	for (int i = 0; i < times; i++) {
@@ -18,3 +18,16 @@ char* Obfuscator::Obfuscate(int times, char* message) {
 	return encrypedMessage;
 }
 
+std::string Obfuscator::Deobfuscate(int times, std::string message) {
+	std::string decrypedMessage = message;
+
+
+	for (int i = 0; i < times; i++) {
+		decrypedMessage = Obfuscate::Obfuscator::ReverseBinary(decrypedMessage);
+		decrypedMessage = Obfuscate::Obfuscator::Reverse(decrypedMessage);
+		decrypedMessage = Obfuscate::Obfuscator::RROT(77, decrypedMessage);
+	}
+
+
+	return decrypedMessage;
+}

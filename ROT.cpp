@@ -2,17 +2,23 @@
 
 using namespace Obfuscate;
 
-char* Obfuscator::ROT(int rotations,char* message) {
-	static std::vector<char> newMessage;
-	for (int i = 0; i < strlen(message); i++) {
-		newMessage.push_back((char)"\0");
-		newMessage[i] = (char) (message[i] + rotations);
-		newMessage[i] = (char)( newMessage[i] + 128);
+std::string Obfuscator::ROT(int rotations, std::string message) {
+	static std::string newMessage;
+	for (int i = 0; i < message.length(); i++) {
+		newMessage.push_back(NULL);
+		newMessage[i] = (char) (message[i] + rotations)+128;
 	}
 
-	char* newNewMessage = newMessage.data();
+	return newMessage;
+}
 
-	for (int i = strlen(message); i < strlen(newNewMessage); ++i)
-		newNewMessage[i] = NULL;
-	return newNewMessage;
+std::string Obfuscator::RROT(int rotations, std::string message) {
+	static std::string newMessage;
+	for (int i = 0; i < message.length(); i++) {
+		newMessage.push_back(NULL);
+		newMessage[i] = (char)(message[i] - rotations)-128;
+	}
+
+
+	return newMessage;
 }
