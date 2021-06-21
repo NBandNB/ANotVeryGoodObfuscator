@@ -88,14 +88,20 @@ void GUI::on_button_savePlainText()
 
 	//Add response buttons to the dialog:
 	dialog->add_button("_Cancel", Gtk::ResponseType::CANCEL);
-	dialog->add_button("_Open", Gtk::ResponseType::OK);
+	dialog->add_button("_Save", Gtk::ResponseType::OK);
 
 	//Add filters, so that only certain file types can be selected:
 
 	auto filter_text = Gtk::FileFilter::create();
-	filter_text->set_name("Text files");
+	filter_text->set_name(".txt files");
 	filter_text->add_mime_type("text/plain");
+	filter_text->add_pattern("*.txt");
 	dialog->add_filter(filter_text);
+
+	auto filter_text_loose = Gtk::FileFilter::create();
+	filter_text_loose->set_name("All Text files");
+	filter_text_loose->add_mime_type("text/plain");
+	dialog->add_filter(filter_text_loose);
 
 	auto filter_any = Gtk::FileFilter::create();
 	filter_any->set_name("Any files");
@@ -122,9 +128,15 @@ void GUI::on_button_loadPlainText()
 	//Add filters, so that only certain file types can be selected:
 
 	auto filter_text = Gtk::FileFilter::create();
-	filter_text->set_name("Text files");
+	filter_text->set_name(".txt files");
 	filter_text->add_mime_type("text/plain");
+	filter_text->add_pattern("*.txt");
 	dialog->add_filter(filter_text);
+
+	auto filter_text_loose = Gtk::FileFilter::create();
+	filter_text_loose->set_name("All Text files");
+	filter_text_loose->add_mime_type("text/plain");
+	dialog->add_filter(filter_text_loose);
 
 	auto filter_any = Gtk::FileFilter::create();
 	filter_any->set_name("Any files");
@@ -160,9 +172,15 @@ void GUI::on_button_loadObfuscatedText()
 	//Add filters, so that only certain file types can be selected:
 
 	auto filter_text = Gtk::FileFilter::create();
-	filter_text->set_name("Text files");
+	filter_text->set_name(".txt files");
 	filter_text->add_mime_type("text/plain");
+	filter_text->add_pattern("*.txt");
 	dialog->add_filter(filter_text);
+
+	auto filter_text_loose = Gtk::FileFilter::create();
+	filter_text_loose->set_name("All Text files");
+	filter_text_loose->add_mime_type("text/plain");
+	dialog->add_filter(filter_text_loose);
 
 	auto filter_any = Gtk::FileFilter::create();
 	filter_any->set_name("Any files");
@@ -184,14 +202,20 @@ void GUI::on_button_saveObfuscatedText()
 
 	//Add response buttons to the dialog:
 	dialog->add_button("_Cancel", Gtk::ResponseType::CANCEL);
-	dialog->add_button("_Open", Gtk::ResponseType::OK);
+	dialog->add_button("_Save", Gtk::ResponseType::OK);
 
 	//Add filters, so that only certain file types can be selected:
 
 	auto filter_text = Gtk::FileFilter::create();
-	filter_text->set_name("Text files");
+	filter_text->set_name(".txt files");
 	filter_text->add_mime_type("text/plain");
+	filter_text->add_pattern("*.txt");
 	dialog->add_filter(filter_text);
+
+	auto filter_text_loose = Gtk::FileFilter::create();
+	filter_text_loose->set_name("All Text files");
+	filter_text_loose->add_mime_type("text/plain");
+	dialog->add_filter(filter_text_loose);
 
 	auto filter_any = Gtk::FileFilter::create();
 	filter_any->set_name("Any files");
