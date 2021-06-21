@@ -7,6 +7,8 @@
 #include <gtkmm/box.h>
 #include <gtkmm/scrolledwindow.h>
 #include "Obfuscate.h"
+#include <gtkmm/filechooserdialog.h>
+#include "FileHandler.h"
 
 class GUI : public Gtk::Window {
 
@@ -24,7 +26,11 @@ protected:
 	void on_button_loadObfuscatedText();
 	void on_button_saveObfuscatedText();
 
-
+	//File Loaders and savers
+	void on_loadPlainText_dialog_response(int response_id, Gtk::FileChooserDialog* dialog);
+	void on_savePlainText_dialog_response(int response_id, Gtk::FileChooserDialog* dialog);
+	void on_loadObfuscatedText_dialog_response(int response_id, Gtk::FileChooserDialog* dialog);
+	void on_saveObfuscatedText_dialog_response(int response_id, Gtk::FileChooserDialog* dialog);
 
 	//Member widgets:
 	Gtk::Box ButtonBox;
@@ -46,5 +52,7 @@ protected:
 	Gtk::Button deobfuscate; 
 	Gtk::Button loadObfuscatedText;
 	Gtk::Button saveObfuscatedText;
+
+	
 
 };

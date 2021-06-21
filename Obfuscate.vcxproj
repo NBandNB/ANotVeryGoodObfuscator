@@ -132,7 +132,7 @@
       </EntryPointSymbol>
     </Link>
     <PostBuildEvent>
-      <Command>copy "C:\vcpkg\installed\$(PlatformShortName)-windows\debug\bin\*" "$(OutDir)"</Command>
+      <Command>call "$(ProjectDir)build.bat" $(PlatformShortName) "$(OutDir)" "$(OutDir)share\glib-2.0\schemas" "$(Configuration)"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>copy .dlls to required locations</Message>
@@ -190,10 +190,11 @@
       </Command>
     </PreBuildEvent>
     <PreLinkEvent>
-      <Command>echo %VC_SourcePath%</Command>
+      <Command>
+      </Command>
     </PreLinkEvent>
     <PostBuildEvent>
-      <Command>copy "C:\vcpkg\installed\$(PlatformShortName)-windows\debug\bin\*" "$(OutDir)"</Command>
+      <Command>call "$(ProjectDir)build.bat" $(PlatformShortName) "$(OutDir)" "$(OutDir)share\glib-2.0\schemas" "$(Configuration)"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>copy .dlls to required locations</Message>
