@@ -80,7 +80,7 @@ GUI::~GUI()
 void GUI::on_button_savePlainText()
 {
 	auto dialog = new Gtk::FileChooserDialog("Please choose a file",
-		Gtk::FileChooser::Action::OPEN);
+		Gtk::FileChooser::Action::SAVE);
 	dialog->set_transient_for(*this);
 	dialog->set_modal(true);
 	dialog->signal_response().connect(sigc::bind(
@@ -194,7 +194,7 @@ void GUI::on_button_loadObfuscatedText()
 void GUI::on_button_saveObfuscatedText()
 {
 	auto dialog = new Gtk::FileChooserDialog("Please choose a file",
-		Gtk::FileChooser::Action::OPEN);
+		Gtk::FileChooser::Action::SAVE);
 	dialog->set_transient_for(*this);
 	dialog->set_modal(true);
 	dialog->signal_response().connect(sigc::bind(

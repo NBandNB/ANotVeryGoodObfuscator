@@ -7,10 +7,10 @@ bool isGraphical = true;
 
 int main(int argc, char** argv) {
 
-	std::cout << "Welcome to the ANotVeryGoodObfuscator please remember that it lives up to its name.\nIt will not hide any information, do not use this for security.\n\n\t-LotsOfBlochs";
+	std::cout << "Welcome to the ANotVeryGoodObfuscator please remember that it lives up to its name.\nIt will not hide any information, do not use this for security.\n\n\t-LotsOfBlochs" << std::endl;
 
 	if (argc == 0) {
-		std::cout << " Please enter a valid number of arguments\n For more help try: \n \"Obfuscate -h\"";
+		std::cout << " Please enter a valid number of arguments\n For more help try: \n \"Obfuscate -h\"" << std::endl;
 		std::exit(EXIT_FAILURE);
 	}
 

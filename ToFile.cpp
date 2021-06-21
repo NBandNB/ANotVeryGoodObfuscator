@@ -26,11 +26,11 @@ std::string Files::readFromFile(std::string file) {
 bool Files::badText(std::string message) {
 
     if (message == "BADFILE") {
-        std::cout << "The file is empty!";
+        std::cout << "The file is empty!" << std::endl;
         return true;
     }
     else if (message.length() == 0) {
-        std::cout << "The file does not exist!";
+        std::cout << "The file does not exist!" << std::endl;
         return true;
     }
     else
