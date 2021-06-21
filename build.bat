@@ -16,6 +16,7 @@ IF NOT EXIST %2%\alreadyCopied.txt (
 	)
 	copy C:\vcpkg\installed\%1-windows\share\glib-2.0\schemas\* %3%
 	echo "copied schemas" 
+	copy C:\vcpkg\installed\%1-windows\tools\glib\gdbus.exe %2%
 ) ELSE (
 	echo "Not re-copying"
 )
