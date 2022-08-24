@@ -6,3 +6,4 @@ out.txt
 /vcpkg_installed
 /Win32
 *.user
+/.idea/

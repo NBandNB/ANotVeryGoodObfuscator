@@ -1,6 +1,4 @@
-#pragma once
-
-#include "Obfuscate.h"
+#include "../include/Obfuscate.h"
 
 using namespace Obfuscate;
 

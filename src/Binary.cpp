@@ -1,9 +1,9 @@
-#include "Obfuscate.h"
+#include "../include/Obfuscate.h"
 
 using namespace Obfuscate;
 
 std::string Obfuscator::Binary(std::string message) {
-	static std::string newMessage;
+	std::string newMessage;
 	for (int i = message.length()-1; i >= 0; i--) {
 		int n = message[i];
 		for (int i = 0; i < 8; i++)
@@ -19,7 +19,7 @@ std::string Obfuscator::Binary(std::string message) {
 }
 
 std::string Obfuscator::ReverseBinary(std::string message) {
-	static std::string newMessage = message;
+	std::string newMessage = message;
 	std::string newNewMessage;
 	for (long long i = (message.length() / 9)-1; i >= 0; i--) {
 		std::string currentBin = newMessage.substr(i * (long long)9, (i * (long long)9) + (long long)8);

@@ -1,4 +1,5 @@
-#include "Main.h"
+#include <QApplication>
+#include "../include/Main.h"
 
 std::string inFile = "in.txt";
 std::string outFile = "out.txt";
@@ -33,10 +34,11 @@ int main(int argc, char** argv) {
 		}
 	}
 	if (isGraphical) {
-		auto app = Gtk::Application::create("org.gtkmm.example");
+        QApplication a(argc, argv);
 
-		//Shows the window and returns when it is closed.
-		return app->make_window_and_run<GUI>(argc, argv);
+        GUI w;
+        w.show();
+        return a.exec();
 	}
 	else if (!isGraphical) {
 		std::string message = Files::readFromFile(inFile);
